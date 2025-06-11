@@ -374,3 +374,32 @@ a[href], button, .cta-button {
         display: none; /* Optionnel - améliore les performances sur mobile */
     }
 }
+
+/* Style spécifique pour le CTA Portfolio */
+.portfolio-cta {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    padding: 12px 24px;
+    background-color: var(--text-dark);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.portfolio-cta:hover {
+    background-color: var(--accent-red);
+    transform: translateY(-2px);
+}
+
+.portfolio-cta i {
+    font-size: 0.8em;
+}
+
+@media (max-width: 768px) {
+    .portfolio-cta {
+        width: 100%;
+        justify-content: center;
+    }
+}
