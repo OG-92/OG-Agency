@@ -1,152 +1,264 @@
-/* ---- VARIABLES & GLOBAL STYLES ---- */
+/* ---- VARIABLES & STYLES GLOBAUX ---- */
+
 :root {
-    --main-dark: #00041e;
-    --main-red: #dd0a00;
-    --text-light: #f0f0f0;
-    --text-dark: #0d0d0d;
-    
-    --font-title: 'Syne', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --bg-light: #F9F9F9;
+    --text-dark: #00041e;
+    --accent-red: #dd0a00;
+    --border-light: #e0e0e0;
+    --font-main: 'Manrope', sans-serif;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-/* Hiding default cursor for the whole page */
-body, a, button {
-    cursor: none;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 
 body {
-    background-color: var(--main-dark);
-    color: var(--text-light);
-    font-family: var(--font-body);
-    line-height: 1.6;
+    font-family: var(--font-main);
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.7;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path d="M0 0 L20 10 L0 20 Z" fill="%23dd0a00"/></svg>') 0 10, auto;
+    width: 100vw;
     overflow-x: hidden;
-    /* Animated Gradient Background */
-    background: linear-gradient(-45deg, #00041e, #1b0212, #01142c, #240303);
-    background-size: 400% 400%;
-    animation: gradientBG 20s ease infinite;
 }
 
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
 
-h1, h2 {
-    font-family: var(--font-title);
-    font-weight: 800;
-    color: var(--main-red);
-    text-transform: uppercase;
-}
-
-h1 { font-size: clamp(3rem, 10vw, 8rem); }
-h2 { font-size: clamp(2rem, 8vw, 4rem); margin-bottom: 40px; text-align: center; }
-p { font-size: 1.1rem; max-width: 700px; margin: 0 auto; font-weight: 500; }
-
-/* ---- CUSTOM CURSOR ---- */
-.cursor-dot, .cursor-outline {
-    pointer-events: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: 9999;
+h1, h2, h3 { font-weight: 800; }
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    max-width: 800px;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease-out forwards;
+    animation-delay: 0.3s;
 }
-body:hover .cursor-dot, body:hover .cursor-outline { opacity: 1; }
-.cursor-dot {
-    width: 8px;
-    height: 8px;
-    background-color: var(--main-red);
-}
-.cursor-outline {
-    width: 40px;
-    height: 40px;
-    border: 2px solid rgba(221, 10, 0, 0.5);
-    transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, transform 0.1s linear;
-}
-/* Cursor hover effect */
-.cursor-outline.hover {
-    width: 60px;
-    height: 60px;
-    border-color: var(--main-red);
+h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h3 { font-size: 1.5rem; margin-bottom: 10px; }
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 600px;
+    margin: 20px auto 0;
+    text-align: center;
 }
 
-
-/* ---- HEADER & NAVIGATION ---- */
+/* ---- HEADER ---- */
 .main-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 50px;
-    z-index: 1000;
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    background-color: rgba(249, 249, 249, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid var(--border-light);
 }
-.logo { font-family: var(--font-title); font-size: 2.5rem; color: var(--main-red); }
-.main-nav ul { list-style: none; display: flex; }
-.main-nav li { margin-left: 35px; }
-.main-nav a { text-decoration: none; color: var(--text-light); font-weight: 500; font-size: 1rem; text-transform: uppercase; padding: 10px; transition: color 0.3s ease; }
-.main-nav a:hover { color: var(--main-red); }
+.logo { font-weight: 800; font-size: 2rem; }
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    margin-left: 25px;
+    font-weight: 700;
+}
+
+.cta-button {
+    background-color: var(--accent-red);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.cta-button.large {
+    font-size: 1.1rem;
+    padding: 16px 32px;
+    display: inline-block;
+    margin-top: 30px;
+    animation: pulse 2.5s infinite;
+}
 
 /* ---- SECTIONS ---- */
-.fullscreen-section {
-    min-height: 100vh;
-    width: 100%;
+section { padding: 120px 0; }
+
+.hero-section {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    padding: 100px 50px;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 20px;
+}
+.hero-section .content-container {
+    padding: 0;
+}
+
+/* ... (conserve tout le CSS existant jusqu'à la partie sticky) ... */
+
+/* ---- EFFET STICKY CORRIGÉ ---- */
+.methodology-section {
+    background-color: #fff;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    position: relative; /* Nouveau */
+}
+
+.sticky-parent {
+    display: flex;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    min-height: 100vh; /* Nouveau - essentiel pour le sticky */
+}
+
+.sticky-element {
+    width: 40%;
+    position: sticky;
+    top: 140px; /* Ajusté pour compenser le header */
+    height: fit-content;
+    align-self: flex-start;
+    padding-bottom: 40px;
+    margin-top: 20px; /* Nouveau */
+}
+
+.scrolling-content {
+    width: 60%;
+    padding-bottom: 40px; /* Nouveau */
+}
+
+.service-card {
+    padding: 40px;
+    margin-bottom: 40px;
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    background-color: var(--bg-light);
+}
+.service-card h3 { color: var(--accent-red); }
+
+/* ---- PROJETS ---- */
+.projects-section { text-align: center; }
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+    text-align: left;
+}
+.project-card {
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+.project-placeholder {
+    height: 200px;
+    background-color: var(--text-dark);
+}
+.project-card h3, .project-card p { padding: 0 25px; }
+.project-card h3 { margin-top: 20px; }
+.project-card p { padding-bottom: 25px; color: #555; }
+
+/* ---- CONTACT & FOOTER ---- */
+.contact-section {
+    text-align: center;
+    background-color: var(--text-dark);
+    color: white;
+}
+.contact-section h2,
+.contact-section .subtitle,
+.contact-section a {
+    color: white;
+}
+.main-footer {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* ---- ANIMATION AU DÉFILEMENT ---- */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transition-delay: 0.1s;
+}
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---- CURSEUR CLIQUABLE ---- */
+a[href], button, .cta-button {
+    cursor: pointer;
+}
+
+/* ---- ANIMATIONS KEYFRAMES ---- */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* ---- DÉGRADÉS FLOUS EN FOND ---- */
+.background-blur {
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.2;
+    pointer-events: none;
+}
+.blur-red {
+    width: 300px;
+    height: 300px;
+    background: var(--accent-red);
+    top: 100px;
+    left: -100px;
+}
+.blur-blue {
+    width: 250px;
+    height: 250px;
+    background: #00AEEF;
+    top: 500px;
+    right: -100px;
+}
+
+/* ---- SÉPARATEUR DIAGONAL ---- */
+.diagonal-separator {
+    height: 80px;
+    background: linear-gradient(to right bottom, transparent 49%, var(--bg-light) 50%);
+    margin-top: -80px;
+    z-index: 1;
     position: relative;
 }
-.content-container { text-align: center; width: 100%; }
-
-/* ---- SCROLL REVEAL ANIMATION ---- */
-.text-reveal-container {
-    overflow: hidden; /* This masks the text */
-}
-
-.reveal-text {
-    transform: translateY(110%);
-    opacity: 0;
-    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.8s ease;
-}
-
-.reveal-text.is-visible {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-/* ---- SPECIFIC SECTION STYLES ---- */
-#hero .subtitle { font-size: 1.5rem; color: var(--text-light); }
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; text-align: left; }
-.service-item { border: 1px solid rgba(255, 255, 255, 0.1); padding: 30px; transition: background-color 0.4s ease, border-color 0.4s ease; }
-.service-item:hover { background-color: rgba(221, 10, 0, 0.05); border-color: rgba(221, 10, 0, 0.4); }
-.service-item h3 { font-family: var(--font-title); font-weight: 700; color: var(--main-red); margin-bottom: 15px; font-size: 1.5rem; }
-.cta-button {
-    display: inline-block;
-    margin-top: 40px;
-    padding: 15px 40px;
-    border: 2px solid var(--main-red);
-    color: var(--main-red);
-    text-decoration: none;
-    font-family: var(--font-title);
-    font-weight: 700;
-    font-size: 1.2rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-.cta-button:hover { background-color: var(--main-red); color: var(--text-dark); }
