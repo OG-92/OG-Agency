@@ -262,3 +262,29 @@ a[href], button, .cta-button {
     z-index: 1;
     position: relative;
 }
+
+/* ---- NOUVEAUX STYLES PROJETS ---- */
+.project-image {
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-card .cta-button {
+    margin: 0 25px 25px;
+    display: inline-block;
+}
