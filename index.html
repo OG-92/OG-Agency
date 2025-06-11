@@ -3,428 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OG Agency | Communication Digitale Disruptive</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>OG Agency - Communication Digitale Disruptive</title>
+    <meta name="description" content="Agence de communication digitale 360 par Augustin Dautresme. Stratégie, Création de site, SEO, Publicité.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="antialiased">
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-black bg-opacity-70 backdrop-filter backdrop-blur-lg border-b border-red-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20">
-                <div class="flex-shrink-0 flex items-center">
-                    <span class="text-3xl font-bold glow-text alfa-slab" style="color: #dd0a00">OG</span>
-                    <span class="text-white ml-2 text-xl hidden sm:block">AGENCY</span>
-                </div>
-                <div class="hidden md:flex items-center space-x-10">
-                    <a href="#about" class="text-gray-300 hover:text-white transition duration-300 hover:glow-text">À propos</a>
-                    <a href="#services" class="text-gray-300 hover:text-white transition duration-300 hover:glow-text">Services</a>
-                    <a href="#projects" class="text-gray-300 hover:text-white transition duration-300 hover:glow-text">Projets</a>
-                    <a href="#contact" class="text-gray-300 hover:text-white transition duration-300 hover:glow-text">Contact</a>
-                </div>
-                <div class="flex items-center md:hidden">
-                    <button id="menu-toggle" class="text-gray-300 hover:text-white focus:outline-none">
-                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
+<body>
+
+    <header class="main-header">
+        <div class="logo">OG</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#hero">Accueil</a></li>
+                <li><a href="#about">À Propos</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="fullscreen-section">
+            <div class="content-container animate-on-scroll">
+                <h1>OG AGENCY</h1>
+                <p class="subtitle">La communication digitale qui impose le respect.</p>
+            </div>
+        </section>
+
+        <section id="about" class="fullscreen-section">
+            <div class="content-container animate-on-scroll">
+                <h2>L'ARTISAN DE VOTRE DOMINATION DIGITALE</h2>
+                <p>Je suis Augustin Dautresme, le fondateur d'OG Agency. Dans la jungle digitale, je ne suis pas un simple guide, je suis un stratège 360. Mon approche est directe, sans fioritures et axée sur un seul objectif : votre succès. Je maîtrise chaque levier, de la création de site à la publicité ciblée, pour construire une présence qui ne peut être ignorée.</p>
+            </div>
+        </section>
+
+        <section id="services" class="fullscreen-section">
+            <div class="content-container animate-on-scroll">
+                <h2>MAÎTRISE D'ŒUVRE DIGITALE</h2>
+                <div class="services-grid">
+                    <div class="service-item"><h3>Création de Site Internet</h3><p>Des sites web sur-mesure, rapides et optimisés pour la conversion.</p></div>
+                    <div class="service-item"><h3>Social & Google Ads</h3><p>Des campagnes publicitaires chirurgicales pour atteindre vos cibles avec précision.</p></div>
+                    <div class="service-item"><h3>Stratégie & SEO</h3><p>Un plan d'action pour dominer les résultats de recherche et construire une autorité durable.</p></div>
+                    <div class="service-item"><h3>Référencement Local</h3><p>Devenez la référence incontournable dans votre zone de chalandise.</p></div>
+                    <div class="service-item"><h3>Éléments Graphiques</h3><p>Une identité visuelle forte pour marquer les esprits et vous démarquer.</p></div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </section>
 
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-black bg-opacity-90 backdrop-filter backdrop-blur-lg">
-        <div class="flex flex-col h-full justify-center items-center space-y-10">
-            <a href="#about" class="text-2xl text-gray-300 hover:text-white transition duration-300 hover:glow-text">À propos</a>
-            <a href="#services" class="text-2xl text-gray-300 hover:text-white transition duration-300 hover:glow-text">Services</a>
-            <a href="#projects" class="text-2xl text-gray-300 hover:text-white transition duration-300 hover:glow-text">Projets</a>
-            <a href="#contact" class="text-2xl text-gray-300 hover:text-white transition duration-300 hover:glow-text">Contact</a>
-            <button id="close-menu" class="absolute top-6 right-6 text-gray-300 hover:text-white">
-                <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-        </div>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center parallax-section overflow-hidden bg-radial-gradient">
-        <div class="absolute inset-0">
-            <div class="absolute inset-0 bg-grid-red-500/[0.05]"></div>
-            <div class="absolute top-0 right-0 w-1/3 h-1/3 bg-red-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-20 animate-pulse"></div>
-            <div class="absolute bottom-0 left-0 w-1/2 h-1/3 bg-blue-900 rounded-full mix-blend-soft-light filter blur-3xl opacity-20"></div>
-        </div>
-
-        <div class="relative max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
-            <div class="text-center">
-                <h1 class="hero-text text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter uppercase alfa-slab mb-4" data-aos="zoom-in" data-aos-duration="1000">
-                    O.G.
-                </h1>
-                <h2 class="text-2xl md:text-3xl font-medium text-gray-300 mb-12" data-aos="fade-up" data-aos-delay="300">
-                    <span id="typed"></span>
-                </h2>
-                <div data-aos="fade-up" data-aos-delay="600">
-                    <a href="#contact" class="inline-block bg-transparent border-2 border-red-600 text-red-400 hover:text-white hover:bg-red-600 hover:border-red-600 py-3 px-8 rounded-full font-medium transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
-                        Démarrer un projet
-                    </a>
+        <section id="projects" class="fullscreen-section">
+            <div class="content-container animate-on-scroll">
+                <h2>PROJETS RÉCENTS</h2>
+                <p>Mes collaborations parlent d'elles-mêmes. Découvrez prochainement ici une sélection de projets qui ont redéfini les règles du jeu.</p>
                 </div>
+        </section>
+
+        <section id="contact" class="fullscreen-section">
+             <div class="content-container animate-on-scroll">
+                <h2>PRENDRE LE POUVOIR</h2>
+                <p>Prêt à bousculer votre secteur ? Discutons de votre projet.</p>
+                <a href="mailto:contact@og-agency.com" class="cta-button">contact@og-agency.com</a>
             </div>
-        </div>
-
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce" data-aos="fade-up" data-aos-delay="900">
-            <a href="#about" class="block">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                </svg>
-            </a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 md:py-32 parallax-section bg-radial-gradient">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="absolute -top-40 left-1/4 w-96 h-96 bg-red-900 rounded-full mix-blend-soft-light filter blur-[100px] opacity-10"></div>
-            <div class="relative grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div class="space-y-6" data-aos="fade-right">
-                    <h2 class="text-4xl md:text-5xl font-medium alfa-slab tracking-tight">
-                        <span class="text-red-500">//</span>
-                        <span class="glow-text">Augustin Dautresme</span>
-                    </h2>
-                    <h3 class="text-xl text-red-500 uppercase tracking-wider">Original Gangster du digital</h3>
-                    <div class="border-t border-red-900 pt-4">
-                        <p class="text-gray-300 leading-relaxed">
-                            Je suis Augustin Dautresme, un expert polyvalent dans le domaine de la communication digitale. En tant que professionnel 360°, je maîtrise l'ensemble des aspects nécessaires pour propulser votre présence digitale à un niveau supérieur.
-                        </p>
-                        <p class="text-gray-300 mt-4 leading-relaxed">
-                            Mon approche unique fusionne créativité disruptive et stratégie data-driven pour des résultats qui marquent et génèrent un véritable retour sur investissement. Je transforme les idées en expériences digitales captivantes qui créent de l'engagement.
-                        </p>
-                    </div>
-                    <div class="mt-8 flex space-x-4">
-                        <div class="bg-black bg-opacity-30 border border-red-900 rounded-lg px-4 py-2">
-                            <span class="text-red-500">5+</span>
-                            <span class="text-gray-300">ans d'expérience</span>
-                        </div>
-                        <div class="bg-black bg-opacity-30 border border-red-900 rounded-lg px-4 py-2">
-                            <span class="text-red-500">50+</span>
-                            <span class="text-gray-300">projets réalisés</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="relative" data-aos="fade-left" data-aos-delay="300">
-                    <div class="relative">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-red-500/5 to-transparent rounded-xl"></div>
-                        <div class="relative aspect-[3/4] bg-gray-800 bg-opacity-20 border-gradient rounded-xl flex items-center justify-center">
-                            <div class="text-center p-8">
-                                <div class="bg-gray-800 border-2 border-dashed border-red-900 rounded-xl w-32 h-32 mx-auto"></div>
-                                <div class="mt-6">
-                                    <div class="bg-red-900 h-4 rounded-full w-4/5 mx-auto mb-3"></div>
-                                    <div class="bg-gray-700 h-4 rounded-full w-3/4 mx-auto mb-3"></div>
-                                    <div class="bg-gray-800 h-4 rounded-full w-2/3 mx-auto"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 md:py-32 parallax-section bg-radial-gradient">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-medium alfa-slab mb-4 tracking-tight">
-                    <span class="text-red-500">//</span>
-                    <span class="glow-text">Expertise Digitale</span>
-                </h2>
-                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-                    Une gamme complète de services numériques pour propulser votre entreprise à l'ère digitale
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <!-- Service 1 -->
-                <div class="service-card bg-black bg-opacity-20 rounded-2xl p-8 border-gradient backdrop-filter backdrop-blur-lg transition-all duration-500 hover:red-shadow hover:scale-105 hover:z-10 hover:border-red-500"
-                     data-aos="fade-up" data-aos-delay="50">
-                    <div class="text-red-500 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3 text-white">Création de Site Internet</h3>
-                    <p class="text-gray-400 transition-all duration-500 group-hover:text-gray-200">
-                        Sites web sur mesure, performants et esthétiques, conçus pour convertir et fidéliser vos visiteurs.
-                    </p>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="group service-card bg-black bg-opacity-20 rounded-2xl p-8 border-gradient backdrop-filter backdrop-blur-lg transition-all duration-500 hover:red-shadow hover:scale-105 hover:z-10 hover:border-red-500"
-                     data-aos="fade-up" data-aos-delay="150">
-                    <div class="text-red-500 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3 text-white">Social Ads & Google Ads</h3>
-                    <p class="text-gray-400">
-                        Campagnes publicitaires ciblées sur les réseaux sociaux et moteurs de recherche pour maximiser votre ROI.
-                    </p>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="service-card bg-black bg-opacity-20 rounded-2xl p-8 border-gradient backdrop-filter backdrop-blur-lg transition-all duration-500 hover:red-shadow"
-                     data-aos="fade-up" data-aos-delay="250">
-                    <div class="text-red-500 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3 text-white">Stratégie Digitale & SEO</h3>
-                    <p class="text-gray-400">
-                        Solutions complètes pour améliorer votre visibilité en ligne et convertir plus de trafic qualifié.
-                    </p>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="service-card bg-black bg-opacity-20 rounded-2xl p-8 border-gradient backdrop-filter backdrop-blur-lg transition-all duration-500 hover:red-shadow"
-                     data-aos="fade-up" data-aos-delay="50">
-                    <div class="text-red-500 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3 text-white">Référencement Local</h3>
-                    <p class="text-gray-400">
-                        Domination sur les résultats locaux pour attirer une clientèle de proximité à votre point de vente.
-                    </p>
-                </div>
-
-                <!-- Service 5 -->
-                <div class="service-card bg-black bg-opacity-20 rounded-2xl p-8 border-gradient backdrop-filter backdrop-blur-lg transition-all duration-500 hover:red-shadow"
-                     data-aos="fade-up" data-aos-delay="150">
-                    <div class="text-red-500 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a1 1 0 011.414 0l2.829 2.829a1 1 0 010 1.414l-8.486 8.485M7 17h.01" />
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3 text-white">Design Graphique</h3>
-                    <p class="text-gray-400">
-                        Éléments visuels professionnels qui renforcent votre identité de marque et captent l'attention.
-                    </p>
-                </div>
-
-                <!-- Service 6 -->
-                <div class="service-card bg-black bg-opacity-20 rounded-2xl p-8 border-gradient backdrop-filter backdrop-blur-lg transition-all duration-500 hover:red-shadow"
-                     data-aos="fade-up" data-aos-delay="250">
-                    <div class="text-red-500 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3 text-white">Solutions 360°</h3>
-                    <p class="text-gray-400">
-                        Approche intégrée de la communication digitale pour un impact maximal sur l'ensemble des canaux.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 md:py-32 parallax-section bg-radial-gradient">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-medium alfa-slab mb-4 tracking-tight">
-                    <span class="text-red-500">//</span>
-                    <span class="glow-text">Réalisations</span>
-                </h2>
-                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-                    Une sélection de projets qui démontrent notre expertise et notre créativité sans limites
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="group relative h-96 rounded-2xl overflow-hidden" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10 opacity-80"></div>
-                    <div class="absolute inset-0 bg-red-900 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-                    <div class="absolute bottom-0 p-6 z-20 transform translate-y-10 group-hover:translate-y-0 transition-transform duration-500">
-                        <span class="text-red-500 text-sm">Site E-commerce</span>
-                        <h3 class="text-2xl font-bold text-white mb-2">Nyx Collection</h3>
-                        <p class="text-gray-300 mb-4">Augmentation de conversion de 150% en 3 mois</p>
-                        <a href="#" class="text-red-500 hover:text-red-400 flex items-center">
-                            Voir le projet
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="group relative h-96 rounded-2xl overflow-hidden" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10 opacity-80"></div>
-                    <div class="absolute inset-0 bg-red-900 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-                    <div class="absolute bottom-0 p-6 z-20 transform translate-y-10 group-hover:translate-y-0 transition-transform duration-500">
-                        <span class="text-red-500 text-sm">Stratégie Social Media</span>
-                        <h3 class="text-2xl font-bold text-white mb-2">Café Noir</h3>
-                        <p class="text-gray-300 mb-4">+45% d'engagement organique en 6 semaines</p>
-                        <a href="#" class="text-red-500 hover:text-red-400 flex items-center">
-                            Voir le projet
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="group relative h-96 rounded-2xl overflow-hidden" data-aos="zoom-in" data-aos-delay="500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10 opacity-80"></div>
-                    <div class="absolute inset-0 bg-red-900 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-                    <div class="absolute bottom-0 p-6 z-20 transform translate-y-10 group-hover:translate-y-0 transition-transform duration-500">
-                        <span class="text-red-500 text-sm">Identité de Marque</span>
-                        <h3 class="text-2xl font-bold text-white mb-2">Black Raven</h3>
-                        <p class="text-gray-300 mb-4">Refonte complète pour une agence de sécurité privée</p>
-                        <a href="#" class="text-red-500 hover:text-red-400 flex items-center">
-                            Voir le projet
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-16" data-aos="fade-up">
-                <a href="#" class="inline-flex items-center text-red-500 hover:text-red-400 font-medium">
-                    Voir tous les projets
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 md:py-32 parallax-section bg-radial-gradient">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-medium alfa-slab mb-4 tracking-tight">
-                    <span class="text-red-500">//</span>
-                    <span class="glow-text">Parlons de votre projet</span>
-                </h2>
-                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
-                    Prêt à donner une nouvelle dimension à votre présence digitale? Discutons de votre vision.
-                </p>
-            </div>
-
-            <div class="bg-black bg-opacity-20 backdrop-filter backdrop-blur-lg border-gradient rounded-2xl p-8 md:p-12" data-aos="fade-up" data-aos-delay="200">
-                <form class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="name" class="block text-gray-300 mb-2">Nom complet</label>
-                            <input type="text" id="name" class="w-full px-4 py-3 input-field text-gray-300 rounded-lg focus:outline-none">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-gray-300 mb-2">Email</label>
-                            <input type="email" id="email" class="w-full px-4 py-3 input-field text-gray-300 rounded-lg focus:outline-none">
-                        </div>
-                    </div>
-
-                    <div>
-                        <label for="subject" class="block text-gray-300 mb-2">Sujet</label>
-                        <input type="text" id="subject" class="w-full px-4 py-3 input-field text-gray-300 rounded-lg focus:outline-none">
-                    </div>
-
-                    <div>
-                        <label for="message" class="block text-gray-300 mb-2">Message</label>
-                        <textarea id="message" rows="5" class="w-full px-4 py-3 input-field text-gray-300 rounded-lg focus:outline-none"></textarea>
-                    </div>
-
-                    <button type="submit" class="w-full py-4 bg-gradient-to-r from-red-600 to-red-800 text-white font-medium rounded-lg hover:from-red-700 hover:to-red-900 transition-all duration-300 transform hover:-translate-y-1">
-                        Envoyer le message
-                    </button>
-                </form>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 text-center">
-                <div data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-red-500 mb-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-medium text-white">Téléphone</h3>
-                    <p class="text-gray-400">+33 6 12 34 56 78</p>
-                </div>
-                <div data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-red-500 mb-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-medium text-white">Email</h3>
-                    <p class="text-gray-400">contact@og-agency.fr</p>
-                </div>
-                <div data-aos="fade-up" data-aos-delay="500">
-                    <div class="text-red-500 mb-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-medium text-white">Localisation</h3>
-                    <p class="text-gray-400">Paris, France</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="pt-20 pb-10 bg-black bg-opacity-40 backdrop-filter backdrop-blur-lg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <span class="text-4xl font-bold alfa-slab" style="color: #dd0a00">OG</span>
-                <p class="mt-2 text-lg font-medium text-gray-300">L'essence du digital dans son état le plus pur</p>
-
-                <div class="flex justify-center space-x-6 mt-8">
-                    <a href="#" class="text-gray-400 hover:text-red-500 transition-colors">
-                        <span class="sr-only">Facebook</span>
-                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
-                        </svg>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-red-500 transition-colors">
-                        <span class="sr-only">Instagram</span>
-                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
-                        </svg>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-red-500 transition-colors">
-                        <span class="sr-only">Twitter</span>
-                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
-            <div class="mt-12 pt-8 border-t border-red-900 text-center">
-                <p class="text-gray-500">© 2023 OG Agency. Tous droits réservés.</p>
-            </div>
-        </div>
-    </footer>
+        </section>
+    </main>
 
     <script src="script.js"></script>
+
 </body>
 </html>
