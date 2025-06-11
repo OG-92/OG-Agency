@@ -61,6 +61,12 @@ h3 { font-size: 1.5rem; margin-bottom: 10px; }
     border-bottom: 1px solid var(--border-light);
 }
 .logo { font-weight: 800; font-size: 2rem; }
+
+.logo a {
+    display: block;
+    line-height: 0;
+}
+
 .main-nav a {
     text-decoration: none;
     color: var(--text-dark);
