@@ -101,6 +101,81 @@ h3 { font-size: 1.5rem; margin-bottom: 10px; }
     animation: pulse 2.5s infinite;
 }
 
+/* Styles existants du header (conservez-les) */
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    margin-left: 25px;
+    font-weight: 700;
+    position: relative;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+}
+
+/* Effet hover pour les liens normaux */
+.main-nav a:not(.cta-button):hover {
+    color: var(--accent-red);
+}
+
+/* Animation de soulignement */
+.main-nav a:not(.cta-button)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-red);
+    transition: width 0.3s ease;
+}
+
+.main-nav a:not(.cta-button):hover::after {
+    width: 100%;
+}
+
+/* Effet hover pour le bouton CTA */
+.main-nav .cta-button {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    padding: 12px 24px;
+    min-width: 100px; 
+    text-align: center;
+}
+
+.main-nav .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+.main-nav .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(221, 10, 0, 0.3);
+}
+
+.main-nav .cta-button:hover::before {
+    left: 0;
+}
+
+/* Effet "pulse" subtil au survol */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.main-nav .cta-button:hover {
+    animation: pulse 1.5s infinite;
+}
+
 /* ---- SECTIONS ---- */
 section { padding: 120px 0; }
 
@@ -488,4 +563,117 @@ a[href], button, .cta-button {
     .header-gif {
         height: 30px;
     }
+}
+
+/* Style pour le header avec logo et GIF */
+.main-header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.logo {
+    justify-self: start;
+}
+
+.header-gif-container {
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+}
+
+.header-gif {
+    height: 40px;
+    width: auto;
+    border-radius: 4px;
+    border: 2px solid white;
+    box-shadow: 0 2px 8px rgba(221, 10, 0, 0.2);
+}
+
+.main-nav {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+}
+
+/* Ajustements responsive */
+@media (max-width: 1024px) {
+    .main-header {
+        grid-template-columns: auto 1fr auto;
+    }
+    
+    .header-gif-container {
+        display: none; /* Cache le GIF sur tablette/mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        padding: 15px 20px;
+        grid-template-columns: auto 1fr;
+    }
+    
+    .logo img {
+        height: 30px;
+    }
+    
+    .main-nav a {
+        margin-left: 15px;
+        font-size: 0.9rem;
+    }
+    
+    .cta-button {
+        padding: 10px 18px;
+    }
+}
+
+/* Agrandissement du GIF */
+.header-gif-container {
+    position: relative;
+    z-index: 1;
+}
+
+.header-gif {
+    height: 52px; /* Taille augmentée */
+    width: auto;
+    transition: transform 0.3s ease;
+    transform: scale(1.15); /* Effet zoom contrôlé */
+}
+
+/* Version corrigée avec media query fonctionnelle */
+@media (max-width: 1024px) {
+    .header-gif-container {
+        display: none; /* On cache toujours le GIF sur mobile comme dans votre demande initiale */
+    }
+    
+    /* Correction : ces styles ne s'appliquent plus puisque le conteneur est caché */
+    /* .header-gif {
+        height: 44px;
+        transform: none;
+    } */ /* Cette partie est inutile car le conteneur est caché */
+    
+    .main-nav .cta-button {
+        padding: 10px 22px; /* Maintien du padding réduit sur mobile */
+    }
+}
+
+/* Version optimisée pour le GIF agrandi (desktop seulement) */
+.header-gif {
+    height: 52px;
+    width: auto;
+    margin: 0 15px;
+    transform: none; /* On supprime le scale() pour une meilleure stabilité */
+    transition: transform 0.3s ease;
+}
+
+.header-gif:hover {
+    transform: scale(1.1); /* Animation hover seulement */
+}
+
+/* Correction espacement bouton Contact */
+.main-nav .cta-button {
+    padding: 12px 28px;
+    min-width: 110px; /* Largeur minimale garantie */
+    box-sizing: border-box;
 }
