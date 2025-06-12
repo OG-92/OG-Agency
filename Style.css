@@ -1,5 +1,3 @@
-/* ---- VARIABLES & STYLES GLOBAUX ---- */
-
 :root {
     --bg-light: #F9F9F9;
     --text-dark: #00041e;
@@ -16,7 +14,6 @@ body {
     background-color: var(--bg-light);
     color: var(--text-dark);
     line-height: 1.7;
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path d="M0 0 L20 10 L0 20 Z" fill="%23dd0a00"/></svg>') 0 10, auto;
     width: 100vw;
     overflow-x: hidden;
 }
@@ -47,10 +44,9 @@ h3 { font-size: 1.5rem; margin-bottom: 10px; }
     text-align: center;
 }
 
-/* ---- HEADER ---- */
 .main-header {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
     padding: 20px 40px;
     position: sticky;
@@ -60,48 +56,36 @@ h3 { font-size: 1.5rem; margin-bottom: 10px; }
     z-index: 100;
     border-bottom: 1px solid var(--border-light);
 }
-.logo { font-weight: 800; font-size: 2rem; }
 
-.logo a {
-    display: block;
-    line-height: 0;
-}
+.logo { justify-self: start; }
+.logo a { display: block; line-height: 0; }
+.logo img { height: 40px; width: auto; display: block; }
 
-.main-nav a {
-    text-decoration: none;
-    color: var(--text-dark);
-    margin-left: 25px;
-    font-weight: 700;
+.header-gif-container {
+    justify-self: center;
+    position: relative;
+    z-index: 1;
 }
 
-.logo img {
-    height: 40px; 
-    width: auto;  
-    display: block; 
+.header-gif {
+    height: 52px;
+    width: auto;
+    border-radius: 4px;
+    border: 2px solid white;
+    box-shadow: 0 2px 8px rgba(221, 10, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
-.cta-button {
-    background-color: var(--accent-red);
-    color: white;
-    padding: 12px 24px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-.cta-button.large {
-    font-size: 1.1rem;
-    padding: 16px 32px;
-    display: inline-block;
-    margin-top: 30px;
-    animation: pulse 2.5s infinite;
+.header-gif:hover {
+    transform: scale(1.1);
 }
 
-/* Styles existants du header (conservez-les) */
+.main-nav {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+}
+
 .main-nav a {
     text-decoration: none;
     color: var(--text-dark);
@@ -112,12 +96,10 @@ h3 { font-size: 1.5rem; margin-bottom: 10px; }
     transition: all 0.3s ease;
 }
 
-/* Effet hover pour les liens normaux */
 .main-nav a:not(.cta-button):hover {
     color: var(--accent-red);
 }
 
-/* Animation de soulignement */
 .main-nav a:not(.cta-button)::after {
     content: '';
     position: absolute;
@@ -133,50 +115,36 @@ h3 { font-size: 1.5rem; margin-bottom: 10px; }
     width: 100%;
 }
 
-/* Effet hover pour le bouton CTA */
 .main-nav .cta-button {
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
+    padding: 12px 28px; 
+    min-width: 110px;
+    box-sizing: border-box;
+    margin-left: 25px; 
+}
+
+.cta-button {
+    background-color: var(--accent-red);
+    color: white;
     padding: 12px 24px;
-    min-width: 100px; 
-    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.main-nav .cta-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.1);
-    transition: all 0.4s ease;
-    z-index: -1;
-}
-
-.main-nav .cta-button:hover {
+.cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(221, 10, 0, 0.3);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-.main-nav .cta-button:hover::before {
-    left: 0;
+.cta-button.large {
+    font-size: 1.1rem;
+    padding: 16px 32px;
+    display: inline-block;
+    margin-top: 30px;
+    animation: pulse 2.5s infinite;
 }
 
-/* Effet "pulse" subtil au survol */
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-.main-nav .cta-button:hover {
-    animation: pulse 1.5s infinite;
-}
-
-/* ---- SECTIONS ---- */
 section { padding: 120px 0; }
 
 .hero-section {
@@ -187,18 +155,16 @@ section { padding: 120px 0; }
     text-align: center;
     padding: 100px 20px;
 }
+
 .hero-section .content-container {
     padding: 0;
 }
 
-/* ... (conserve tout le CSS existant jusqu'à la partie sticky) ... */
-
-/* ---- EFFET STICKY CORRIGÉ ---- */
 .methodology-section {
     background-color: #fff;
     border-top: 1px solid var(--border-light);
     border-bottom: 1px solid var(--border-light);
-    position: relative; /* Nouveau */
+    position: relative;
 }
 
 .sticky-parent {
@@ -207,22 +173,22 @@ section { padding: 120px 0; }
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 40px;
-    min-height: 100vh; /* Nouveau - essentiel pour le sticky */
+    min-height: 100vh;
 }
 
 .sticky-element {
     width: 40%;
     position: sticky;
-    top: 140px; /* Ajusté pour compenser le header */
+    top: 140px;
     height: fit-content;
     align-self: flex-start;
     padding-bottom: 40px;
-    margin-top: 20px; /* Nouveau */
+    margin-top: 20px;
 }
 
 .scrolling-content {
     width: 60%;
-    padding-bottom: 40px; /* Nouveau */
+    padding-bottom: 40px;
 }
 
 .service-card {
@@ -232,9 +198,9 @@ section { padding: 120px 0; }
     border-radius: 16px;
     background-color: var(--bg-light);
 }
+
 .service-card h3 { color: var(--accent-red); }
 
-/* ---- PROJETS ---- */
 .projects-section { text-align: center; }
 .projects-grid {
     display: grid;
@@ -243,114 +209,19 @@ section { padding: 120px 0; }
     margin-top: 60px;
     text-align: left;
 }
+
 .project-card {
     border: 1px solid var(--border-light);
     border-radius: 16px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .project-card:hover {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
-.project-placeholder {
-    height: 200px;
-    background-color: var(--text-dark);
-}
-.project-card h3, .project-card p { padding: 0 25px; }
-.project-card h3 { margin-top: 20px; }
-.project-card p { padding-bottom: 25px; color: #555; }
 
-/* ---- CONTACT & FOOTER ---- */
-.contact-section {
-    text-align: center;
-    background-color: var(--text-dark);
-    color: white;
-}
-.contact-section h2,
-.contact-section .subtitle,
-.contact-section a {
-    color: white;
-}
-.main-footer {
-    text-align: center;
-    padding: 30px;
-    color: #777;
-    font-size: 0.9rem;
-}
-
-/* ---- ANIMATION AU DÉFILEMENT ---- */
-.reveal-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    transition-delay: 0.1s;
-}
-.reveal-on-scroll.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* ---- CURSEUR CLIQUABLE ---- */
-a[href], button, .cta-button {
-    cursor: pointer;
-}
-
-/* ---- ANIMATIONS KEYFRAMES ---- */
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-}
-
-/* ---- DÉGRADÉS FLOUS EN FOND ---- */
-.background-blur {
-    position: absolute;
-    z-index: -1;
-    border-radius: 50%;
-    filter: blur(100px);
-    opacity: 0.2;
-    pointer-events: none;
-}
-.blur-red {
-    width: 300px;
-    height: 300px;
-    background: var(--accent-red);
-    top: 100px;
-    left: -100px;
-}
-.blur-blue {
-    width: 250px;
-    height: 250px;
-    background: #00AEEF;
-    top: 500px;
-    right: -100px;
-}
-
-/* ---- SÉPARATEUR DIAGONAL ---- */
-.diagonal-separator {
-    height: 80px;
-    background: linear-gradient(to right bottom, transparent 49%, var(--bg-light) 50%);
-    margin-top: -80px;
-    z-index: 1;
-    position: relative;
-}
-
-/* ---- NOUVEAUX STYLES PROJETS ---- */
 .project-image {
     height: 200px;
     overflow: hidden;
@@ -371,14 +242,111 @@ a[href], button, .cta-button {
     transform: scale(1.05);
 }
 
-.project-card .cta-button {
-    margin: 0 25px 25px;
-    display: inline-block;
+.project-card h3, .project-card p { padding: 0 25px; }
+.project-card h3 { margin-top: 20px; }
+.project-card p { padding-bottom: 25px; color: #555; }
+
+.contact-section {
+    text-align: center;
+    background-color: var(--text-dark);
+    color: white;
 }
 
-/* ---- RESPONSIVE DESIGN ---- */
+.contact-section h2,
+.contact-section .subtitle,
+.contact-section a {
+    color: white;
+}
 
-/* Pour les tablettes et petits écrans */
+.main-footer {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transition-delay: 0.1s;
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.background-blur {
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.blur-red {
+    width: 300px;
+    height: 300px;
+    background: var(--accent-red);
+    top: 100px;
+    left: -100px;
+}
+
+.blur-blue {
+    width: 250px;
+    height: 250px;
+    background: #00AEEF;
+    top: 500px;
+    right: -100px;
+}
+
+.diagonal-separator {
+    height: 80px;
+    background: linear-gradient(to right bottom, transparent 49%, var(--bg-light) 50%);
+    margin-top: -80px;
+    z-index: 1;
+    position: relative;
+}
+
+.portfolio-cta {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    padding: 12px 24px;
+    background-color: var(--text-dark);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.portfolio-cta:hover {
+    background-color: var(--accent-red);
+    transform: translateY(-2px);
+}
+
 @media (max-width: 1024px) {
     .sticky-parent {
         flex-direction: column;
@@ -408,21 +376,25 @@ a[href], button, .cta-button {
     section {
         padding: 80px 0;
     }
+
+    .header-gif-container {
+        display: none;
+    }
 }
 
-/* Pour les mobiles */
 @media (max-width: 768px) {
     .main-header {
         padding: 15px 20px;
+        grid-template-columns: auto 1fr;
+    }
+
+    .logo img {
+        height: 30px;
     }
 
     .main-nav a {
         margin-left: 15px;
         font-size: 0.9rem;
-    }
-
-    .logo img {
-        height: 30px;
     }
 
     .cta-button {
@@ -446,234 +418,6 @@ a[href], button, .cta-button {
     }
 
     .background-blur {
-        display: none; /* Optionnel - améliore les performances sur mobile */
+        display: none;
     }
-}
-
-/* Style spécifique pour le CTA Portfolio */
-.portfolio-cta {
-    margin-top: 20px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.95rem;
-    padding: 12px 24px;
-    background-color: var(--text-dark);
-    color: white;
-    transition: all 0.3s ease;
-}
-
-.portfolio-cta:hover {
-    background-color: var(--accent-red);
-    transform: translateY(-2px);
-}
-
-.portfolio-cta i {
-    font-size: 0.8em;
-}
-
-@media (max-width: 768px) {
-    .portfolio-cta {
-        width: 100%;
-        justify-content: center;
-    }
-}
-/* Cadre rectangulaire rouge */
-.gif-rectangle-frame {
-    width: 120px; 
-    height: 72px;
-    background-color: var(--accent-red);
-    margin: 0 auto 20px;
-    padding: 4px; /* Réduit pour maximiser l'espace du GIF */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px; /* Légèrement réduit */
-    box-shadow: 0 5px 15px rgba(221, 10, 0, 0.3);
-    border: 2px solid white;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Effet de bordure interne (adapté à la nouvelle taille) */
-.gif-rectangle-frame::before {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    right: 3px;
-    bottom: 3px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 5px;
-    pointer-events: none;
-}
-
-/* Le GIF lui-même - version qui remplit tout l'espace */
-.gif-rectangle-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Remplit tout l'espace en coupant si nécessaire */
-    object-position: center; /* Centre l'image */
-    border-radius: 4px;
-}
-
-/* Responsive - version mobile */
-@media (max-width: 768px) {
-    .gif-rectangle-frame {
-        width: 100px;
-        height: 60px;
-        margin-bottom: 15px;
-        padding: 3px;
-    }
-    
-    .gif-rectangle-frame::before {
-        top: 2px;
-        left: 2px;
-        right: 2px;
-        bottom: 2px;
-    }
-}
-
-@media (max-width: 480px) {
-    .gif-rectangle-frame {
-        width: 80px;
-        height: 48px;
-        border-width: 1px;
-    }
-}
-
-/* Style pour le GIF dans le header */
-.header-gif {
-    height: 40px;
-    width: auto;
-    display: block;
-    border-radius: 4px;
-    border: 2px solid white;
-    box-shadow: 0 2px 8px rgba(221, 10, 0, 0.2);
-}
-
-/* Animation subtile au survol */
-.header-gif:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
-}
-
-/* Ajustements responsive */
-@media (max-width: 768px) {
-    .header-gif {
-        height: 30px;
-    }
-}
-
-/* Style pour le header avec logo et GIF */
-.main-header {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    padding: 20px 40px;
-}
-
-.logo {
-    justify-self: start;
-}
-
-.header-gif-container {
-    justify-self: center;
-    display: flex;
-    justify-content: center;
-}
-
-.header-gif {
-    height: 40px;
-    width: auto;
-    border-radius: 4px;
-    border: 2px solid white;
-    box-shadow: 0 2px 8px rgba(221, 10, 0, 0.2);
-}
-
-.main-nav {
-    justify-self: end;
-    display: flex;
-    align-items: center;
-}
-
-/* Ajustements responsive */
-@media (max-width: 1024px) {
-    .main-header {
-        grid-template-columns: auto 1fr auto;
-    }
-    
-    .header-gif-container {
-        display: none; /* Cache le GIF sur tablette/mobile */
-    }
-}
-
-@media (max-width: 768px) {
-    .main-header {
-        padding: 15px 20px;
-        grid-template-columns: auto 1fr;
-    }
-    
-    .logo img {
-        height: 30px;
-    }
-    
-    .main-nav a {
-        margin-left: 15px;
-        font-size: 0.9rem;
-    }
-    
-    .cta-button {
-        padding: 10px 18px;
-    }
-}
-
-/* Agrandissement du GIF */
-.header-gif-container {
-    position: relative;
-    z-index: 1;
-}
-
-.header-gif {
-    height: 52px; /* Taille augmentée */
-    width: auto;
-    transition: transform 0.3s ease;
-    transform: scale(1.15); /* Effet zoom contrôlé */
-}
-
-/* Version corrigée avec media query fonctionnelle */
-@media (max-width: 1024px) {
-    .header-gif-container {
-        display: none; /* On cache toujours le GIF sur mobile comme dans votre demande initiale */
-    }
-    
-    /* Correction : ces styles ne s'appliquent plus puisque le conteneur est caché */
-    /* .header-gif {
-        height: 44px;
-        transform: none;
-    } */ /* Cette partie est inutile car le conteneur est caché */
-    
-    .main-nav .cta-button {
-        padding: 10px 22px; /* Maintien du padding réduit sur mobile */
-    }
-}
-
-/* Version optimisée pour le GIF agrandi (desktop seulement) */
-.header-gif {
-    height: 52px;
-    width: auto;
-    margin: 0 15px;
-    transform: none; /* On supprime le scale() pour une meilleure stabilité */
-    transition: transform 0.3s ease;
-}
-
-.header-gif:hover {
-    transform: scale(1.1); /* Animation hover seulement */
-}
-
-/* Correction espacement bouton Contact */
-.main-nav .cta-button {
-    padding: 12px 28px;
-    min-width: 110px; /* Largeur minimale garantie */
-    box-sizing: border-box;
 }
