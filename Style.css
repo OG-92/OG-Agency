@@ -347,6 +347,14 @@ section { padding: 120px 0; }
     transform: translateY(-2px);
 }
 
+body {
+    cursor: url('/images/cursor-target-red.svg'), auto;
+}
+
+a, button, .cta-button, .portfolio-cta {
+    cursor: url('/images/cursor-target-red.svg'), pointer;
+}
+
 @media (max-width: 1024px) {
     .sticky-parent {
         flex-direction: column;
