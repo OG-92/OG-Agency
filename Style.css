@@ -36,6 +36,72 @@ h1 {
 h2 { font-size: clamp(2rem, 4vw, 3rem); }
 h3 { font-size: 1.5rem; margin-bottom: 10px; }
 
+.hero-title-container {
+  position: relative;
+  margin-bottom: 30px;
+  perspective: 1000px;
+  transition: perspective 0.3s ease-out;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.og-container {
+  position: relative;
+}
+
+.og-3d {
+  font-size: clamp(5rem, 12vw, 10rem);
+  font-weight: 800;
+  color: var(--accent-red);
+  text-shadow: 0 0 15px rgba(221, 10, 0, 0.5);
+  transform-style: preserve-3d;
+  transition: transform 0.05s ease-out;
+  position: relative;
+  line-height: 0.9;
+}
+
+.og-3d::before,
+.og-3d::after {
+  content: 'O.G.';
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.og-3d::before {
+  transform: translateZ(-30px);
+}
+
+.og-3d::after {
+  transform: translateZ(-60px);
+}
+
+.agency-text {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  margin-left: 15px;
+  display: inline-block;
+  vertical-align: bottom;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .hero-title-container {
+    height: 120px;
+  }
+  
+  .og-3d {
+    font-size: clamp(4rem, 10vw, 8rem);
+  }
+  
+  .agency-text {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+}
+
 .subtitle {
     font-size: 1.2rem;
     color: #555;
